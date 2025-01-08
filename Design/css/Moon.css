@@ -1,0 +1,188 @@
+*
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana,
+        sans-serif;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        background: #80764d;
+    }
+
+    .topline{
+        position: absolute;
+        height: 500px;
+        width: 10px;
+        background: rgb(62, 62, 62);
+        margin-bottom: 30%;
+    }
+
+    .clock{
+        background: linear-gradient(to right, #8b53e4, #e4c33e);
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        /* border: 4px solid #f3dd86; */
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .clock::before{
+        content: "";
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(to right, #8b53e4, #e4c33e);    /* 背景中間淡外深 */
+        box-shadow: 0 0 5px 5px rgba(119, 68, 138, 0.526);
+        z-index: -1;
+    }
+
+    .number{
+        transform: rotate(calc(30deg * var(--n)));
+        position: absolute;
+        text-align: center;
+        inset: 20px;
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+    }
+
+    .number>b{
+        transform: rotate(calc(-30deg * var(--n)));
+        display: inline-block;
+    } 
+
+    .center-dot{
+        position: absolute;
+        background: rgb(66, 58, 75);
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+
+    .hour-hand, .minute-hand, .second-hand{
+        --rotate: 0;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%) rotate(calc(var(--rotate) *
+        1deg));
+        transform-origin: bottom;        /* 調整成時間是現在 */
+        border-radius: 30px 30px 0 0;
+    }
+
+    .hour-hand{
+        background: black;
+        width: 5px;
+        height: 50px;
+    }
+
+    .minute-hand{
+        background: rgb(16, 46, 241);
+        width: 4px;
+        height: 80px;
+    }
+
+    .second-hand{
+        background: rgb(241, 16, 53);
+        width: 3px;
+        height: 90px;
+    }
+
+    .rfoot_1{
+        position: absolute;
+        left: 45%;
+        z-index: -2;
+        background: rgb(209, 113, 113);
+        height: 130px;
+        width: 27px;
+        margin-top: 6%;
+    }
+
+    .rfoot_2{
+        position: absolute;
+        left: 53%;
+        z-index: -2;
+        background: rgb(124, 225, 135);
+        height: 130px;
+        width: 27px;
+        margin-top: 6%;
+    }
+
+    .rfoots1{
+        position: absolute;
+        left: -80%;
+        z-index: 15;
+        background: rgb(53, 56, 55);
+        border-radius: 48%;
+        height: 35px;
+        width: 55px;
+        margin-top: 410%;
+    }
+
+    .rfoots2{
+        position: absolute;
+        left: -20%;
+        z-index: 15;
+        background: rgb(53, 56, 55);
+        border-radius: 48%;
+        height: 35px;
+        width: 55px;
+        margin-top: 410%;
+    } 
+
+    .clock {
+        animation: clock ease-in-out 1s infinite alternate;
+        transform-origin: center -20px;
+        float:left;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
+    .topline {
+        animation: topline ease-in-out 1s infinite alternate;
+        transform-origin: center -20px;
+        float:left;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
+    .rfoot_1 {
+        animation: rfoot_1 ease-in-out 1s infinite alternate;
+        transform-origin: center -20px;
+        float:left;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
+    .rfoot_2 {
+        animation: rfoot_2 ease-in-out 1s infinite alternate;
+        transform-origin: center -20px;
+        float:left;
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+    
+    @keyframes clock {
+        0% { transform: rotate(10deg); }
+        100% { transform: rotate(-10deg); }
+    }
+
+    @keyframes topline {
+        0% { transform: rotate(2deg); }
+        100% { transform: rotate(-2deg); }
+    }
+
+    @keyframes rfoot_1 {
+        0% { transform: rotate(50deg); }
+        100% { transform: rotate(-50deg); }
+    }
+
+    @keyframes rfoot_2 {
+        0% { transform: rotate(50deg); }
+        100% { transform: rotate(-50deg); }
+    }

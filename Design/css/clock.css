@@ -1,0 +1,99 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana,
+    sans-serif;
+}
+
+ body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #0b4a6e, #041c2a);    /* 背景中間淡外深 */
+ }
+
+.clock{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #0b4a6e, #041c2a);    /* 背景中間淡外深 */
+}
+
+.clock::before{
+    content: "";
+    width: 525px;
+    height: 525px;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ffd23f, #57eec1);    /* 背景中間淡外深 */
+    box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+.number{
+    transform:rotate(calc(30deg * var(--n)));
+    position: absolute;
+    text-align: center;
+    inset: 20px;
+    font-size: 40px;
+    color: #57eec1;
+    text-shadow: 0 0 12px #ffd23f;
+}
+
+.number b{
+    transform: rotate(calc(-30deg * var(--n)));
+    display: inline-block;
+}
+
+.center-dot{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    /* background-color: gray; */
+    background-color: #ffd23f;
+    border: 6px solid #57eec1;
+    border-radius: 50%;
+}
+
+.hour-hand, .minute-hand, .second-hand{
+    --rotate: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%) rotate(calc(var(--rotate) *
+    1deg));
+    transform-origin: bottom;        /* 調整成時間是現在 */
+    border-radius: 30px 30px 0 0;
+}
+
+.hour-hand{
+    width: 12px;
+    height: 130px;
+    /* background-color: black; */
+    background: linear-gradient(#57eec1, #ffd23f);
+}
+
+.minute-hand{
+    width: 12px;
+    height: 190px;
+    /* background-color: blue; */
+    background: linear-gradient(to top, #57eec1, #ffd23f);
+}
+
+.second-hand{
+    width: 6px;
+    height: 210px;
+    /* background-color: red; */
+    background: linear-gradient(to top, #57eec1, #ffd23f);
+}
+
+
+
