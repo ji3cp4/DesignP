@@ -128,64 +128,15 @@ section{     /* 文字向右移 */
     margin-left: 30px;     /* 向右移20px */
 }
 
-
-@media (max-width: 1535px){
+@media (max-width: 820px){
     header{
-        padding: 15px 5%;
-        transition: .2s;
-    }
-    .icons{
-        padding: 0 11%;
-        transition: .2s;
-    }
-    .scroll-down{
-        right: 3%;
+        padding: 20px 15%;
         transition: .2s;
     }
 }
-
-
-@media (max-width: 1460px){
-    section{
-        padding: 0 12%;
+@media (max-width: 700px){
+    header{
+        padding: 20px 25%;
         transition: .2s;
-    }
-}
-
-
-@media (max-width: 1340px){
-    .hero-img img{
-        width: 100%;
-        height: auto;
-    }
-    .hero-text h1{
-        font-size: 75px;
-        margin: 0 0 30px;
-    }
-    .hero-text h5{
-        margin-bottom: 25px;
-    }
-}
-
-
-@media (max-width: 1195px){
-    section{
-        padding: 0 3%;
-        transition: .2s;
-    }
-    .hero-text{
-        padding-top: 115px;
-    }
-    .hero-img{
-        text-align: center;
-    }
-    .hero-img img{
-        width: 560px;
-        height: auto;
-    }
-    .hero{
-        height: 100%;
-        gap: 1rem;
-        grid-template-columns: 1fr;
     }
 }
