@@ -17,10 +17,10 @@
 
     .topline{
         position: absolute;
-        height: 500px;
+        height: 450px;
         width: 10px;
         background: rgb(62, 62, 62);
-        margin-bottom: 30%;
+        margin-bottom: 45%;
     }
 
     .clock{
